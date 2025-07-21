@@ -8,7 +8,7 @@ model = joblib.load("model.joblib")
 st.title("Employee Income Predictor")
 st.markdown("Fill out the details below to predict if the income is >50K or <=50K.")
 
-# Input form
+
 def user_input():
     return {
         "age": st.number_input("Age", 18, 100, 30),
@@ -27,11 +27,11 @@ def user_input():
         "native-country": st.selectbox("Native Country", ['United-States', 'Mexico', 'Philippines', 'Germany', 'Canada', 'India'])
     }
 
-# Collect inputs
+
 inputs = user_input()
 input_df = pd.DataFrame([inputs])  # Make into a DataFrame
 
-# Predict button
+
 if st.button("Predict"):
     try:
         prediction = model.predict(input_df)
