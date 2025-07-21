@@ -4,7 +4,6 @@ import joblib
 
 model = joblib.load("model.joblib")
 
-# Sample input
 sample = pd.DataFrame([{
     "age": 35,
     "workclass": "Private",
